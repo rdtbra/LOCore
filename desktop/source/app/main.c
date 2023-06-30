@@ -47,7 +47,11 @@ __attribute__((visibility("default"))) void xmlCleanupParser(void)
 #endif // NOTEST_xmlCleanupParser
 
 SAL_IMPLEMENT_MAIN()
+/* RDT: 20230629 - Ponto de entrada, conforme readme. Preciso investigar. */
+/* Segundo comentário que está no final de cada arquivo, há um controle específico do comportamento do vi, em relação a tabs. 
+   Abrirei uma exceção neste caso, ao invés de indentar em 2, vou fazer em 4. */
 {
+    /* RDT: 20230629 - Esta chamada, é a que deve iniciar realmente a aplicação. */
     int ret = soffice_main();
 #ifndef NOTEST_xmlCleanupParser
 #ifdef DBG_UTIL
