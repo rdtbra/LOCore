@@ -51,6 +51,7 @@
 #endif
 
 extern "C" int DESKTOP_DLLPUBLIC soffice_main()
+/* RDT: 20230629 - Inicializações e chamada a SVMain. */
 {
     sal_detail_initialize(sal::detail::InitializeSoffice, nullptr);
 
