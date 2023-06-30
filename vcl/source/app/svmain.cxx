@@ -183,6 +183,7 @@ static oslSignalAction VCLExceptionSignal_impl( void* /*pData*/, oslSignalInfo* 
 }
 
 int ImplSVMain()
+/* RDT: 20230629 - Esta é a verdadeira SVMain. */
 {
     // The 'real' SVMain()
     ImplSVData* pSVData = ImplGetSVData();
@@ -201,6 +202,7 @@ int ImplSVMain()
     {
         // call application main
         pSVData->maAppData.mbInAppMain = true;
+        /* RDT: 20230629 - E aqui é a chamada a função Main da aplicação. */
         nReturn = pSVData->mpApp->Main();
         pSVData->maAppData.mbInAppMain = false;
     }
@@ -233,6 +235,7 @@ int ImplSVMain()
 
 int SVMain()
 {
+    /* RDT: 20230629 - Implementação simples de SVMain, chamando ImplSVMain() */
     return ImplSVMain();
 }
 
